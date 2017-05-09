@@ -1,0 +1,134 @@
+import checkVersion from 'botpress-version-manager'
+import _ from 'lodash'
+import Promise from 'bluebird'
+import Janis from './janis'
+
+let janis = null
+
+const outgoingMiddleware = (event, next) => {
+
+  if (janis === null) {
+    return next()
+  }
+  var message = Object.assign({}, event.raw) // Clone the raw message
+  if (event.platform === "slack") {
+    message.channel = event.raw.channelId
+  }
+  else if (event.platform === "facebook") {
+    message.channel = event.raw.to
+  }
+  if (event.text) {
+    message.text = event.text
+  } else {
+    message.text = ""
+  }
+  
+  janis.hopOut(event.platform, message)
+  return next()
+}
+
+const incomingMiddleware = (event, next) => {
+
+  if (janis === null) {
+    return next()
+  }
+  
+  janis.hopIn(event.platform, event.raw, event.user).then(function (isPaused) {
+    event.raw.paused = isPaused
+    if (!isPaused) {
+      return next()
+    }
+  })
+}
+
+const postProcessingIncomingMiddleware = (event, next) => {
+  if (janis === null) {
+    return next()
+  }
+  if (!event.raw.paused) {
+    janis.logUnkownIntent(event.platform, event.raw)
+  }
+  return next()
+}
+
+module.exports = {
+
+  config: {
+    clientKey: { type: 'string', default: '', env: 'WORDHOP_CLIENT_KEY' },
+    apiKey: { type: 'string', default: '', env: 'WORDHOP_API_KEY' }
+  },
+
+  init(bp) {
+
+    checkVersion(bp, __dirname)
+
+    bp.middlewares.register({
+      name: 'janis.hopOut',
+      type: 'outgoing',
+      order: 100,
+      handler: outgoingMiddleware,
+      module: 'botpress-janis',
+      description: 'Sends out messages.'
+    })
+
+    bp.middlewares.register({
+      name: 'janis.hopIn',
+      type: 'incoming',
+      order: 21,
+      handler: incomingMiddleware,
+      module: 'botpress-janis',
+      description: 'Receive messages.' +
+      ' This middleware should be placed at the beginning as it sets whether or not a bot is paused.'
+    })
+
+    bp.middlewares.register({
+      name: 'janis.logUnkownIntent',
+      type: 'incoming',
+      order: 100,
+      handler: postProcessingIncomingMiddleware,
+      module: 'botpress-janis',
+      description: 'Sends alerts to agents when your bot does not understand the user intent.' +
+      ' This middleware should be placed anywhere after the `hear` handler.'
+    })
+
+  },
+  ready: async function(bp, configurator) {
+    const config = await configurator.loadAll()
+
+    const router = bp.getRouter('botpress-janis')
+
+    const setConfigAndRestart = async newConfigs => {
+      await configurator.saveAll(newConfigs)
+      if (newConfigs.apiKey && newConfigs.clientKey) {
+          if (janis === null) {
+            janis = new Janis(bp, newConfigs)
+          }
+          janis.setConfig(newConfigs)
+      }
+    }
+
+    router.get('/config', async (req, res) => {
+      res.json(await configurator.loadAll())
+    })
+
+    router.post('/config', async (req, res) => {
+      setConfigAndRestart(req.body)
+      res.json(await configurator.loadAll())
+    })
+
+    bp.events.on('assistanceRequested', event => {
+      if (janis === null) {
+        return
+      }
+      if (event.raw.paused) {
+        return
+      }
+      janis.assistanceRequested(event.platform, event.raw)
+    })
+
+    if (config.apiKey && config.clientKey) {
+        janis = new Janis(bp, config)
+    }
+
+  }
+}
