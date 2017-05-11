@@ -1,26 +1,22 @@
-# [Janis](https://www.Janis.io) - SDK For Human + AI Conversational Experiences
+# [Janis](https://www.Janis.ai) - Enhance Slack For Customer Service
 
-Bots enable businesses to respond to customers immediately but they often fail to understand user intent.  According to Facebook, bots fail 70% of the time. Janis helps solve this problem with a toolkit to easily keep humans in the loop when AI fails your customers.    The solution includes an SDK for bot developers to connect their bots to Slack, and a Slack app to get alerts, then pause and take over a bot.
+Janis turns Slack into powerful customer service software.  You can integrate Janis into bots you're building easily and then monitor your bots from Slack.  Janis will alert you when to take over live and open a channel for you to get 1 on 1 with your customer, then automatically resume your bot when you're done. 
 
-![Solution](https://cloud.githubusercontent.com/assets/7429980/22609969/491afe58-ea31-11e6-8928-27e1a1f1d6bd.png)
-
+![Takeover](https://www.janis.ai/github/takeover.gif)
 
 
 You can integrate Janis in minutes and it begins working immediately. 
 
 ### What you can do with Janis:
-You can view a full list of features at (https://www.janis.io).  It's core purpose can be explained with this single GIF  
-
-![Takeover](https://cloud.githubusercontent.com/assets/7429980/22609935/22e39740-ea31-11e6-8286-e5a3ae545565.gif)
+You can view a full list of features at (https://www.janis.ai).  This toolkit enables bot developers to integrate Janis into their conversational experience.
 
 
 ### What you need to get started:
-* [A Slack Account](http://www.slack.com)
-* [Janis for Slack](https://slack.com/oauth/authorize?scope=users:read,users:read.email,commands,chat:write:bot,chat:write:user,channels:read,channels:history,channels:write,bot&client_id=23850726983.39760486257)
+* [Janis for Slack](https://slack.com/oauth/authorize?scope=im:history,users:read,users:read.email,commands,chat:write:bot,chat:write:user,channels:read,channels:history,files:write:user,channels:write,links:read,links:write,bot&client_id=23850726983.39760486257)
 * [Botpress with Messenger and/or Slack module installed](https://botpress.io/)
 
 ##### Operational Dependencies:
-1.  You'll need an API key from Janis and for each Chatbot a Bot Token.  You can get both of those (free) when you add Janis to Slack and through a conversation with Janis. 
+1.  You'll need an API key from Janis and for each Chatbot a Bot Token.  You can get both of those when you add Janis to Slack.
 2.  A Messenger and/or Slack module set up in Botpress. 
 
 
@@ -61,5 +57,5 @@ Go back to Slack and wait for alerts. That's it!
 
 
 ### Looking for something we don't yet support?  
-* [Join our mailing list and we'll notifiy you](https://www.janis.io/contact.html)
-* [Contact Support](mailto:support@janis.io)
+* [Join our mailing list and we'll notifiy you](https://www.janis.ai)
+* [Contact Support](mailto:support@janis.ai)
