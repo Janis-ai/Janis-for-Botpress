@@ -1,6 +1,6 @@
 {
   "name": "botpress-janis",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Monitor bots and take over live from Slack",
   "main": "bin/node.bundle.js",
   "botpress": {
