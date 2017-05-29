@@ -1,24 +1,19 @@
-# [Janis](https://www.Janis.ai) - A Customer Service Toolkit For Slack
+# [Janis](https://developer.Janis.ai) - Manage AI From Slack
 
-Janis alerts you in Slack when your bot can't communicate and opens a channel for you to take over live.  Janis automatically resumes when you're done.  If you use AI such as API.AI you can connect it to Janis and train your AI from live conversation transcripts.  Add Janis to your Slack team and then integrate this SDK into bots you're building in minutes. Janis begins working immediately.  It's an elegant solution to unify your team, bot and customer communications in a single, intuitive interface.
+Janis adds powerful AI management capabilities to Slack through a simple and intuitive natural language interface. Add Janis to Slack, then connect your AI in 60 seconds and start training from Slack in Sandbox Mode.  Integrate Janis into bots you're building with this SDK to monitor AI performance, get real-time alerts when your AI needs help, actionable analytics that tell you what to train and then measure results.  Stop training AI like you're training software and start training AI like a valued member of your team.
 
-![Takeover](https://www.janis.ai/github/takeover.gif)
-
-
-You can integrate Janis in minutes and it begins working immediately. 
+NOTE:  Currently Janis provides full support for API.AI developers, with limited support for Wit.ai developers.
 
 ### What you can do with Janis:
-You can view a full list of features at (https://www.janis.ai).  This toolkit enables you to integrate Janis into your bot so you can manage your messaging experience from Slack.  Key features include:
-* Get real-time alerts when your bot is failing your users
-* Take over live to retain your users.  Janis automatically takes over when you're done
-* Train AI on the fly through real conversations
-* Get reports and insights on how to improve your AI and your conversational experience
-* Collaborate with your Slack team on customer service
+You can view a full list of features at (https://developer.janis.ai).  Key features include:
+* Janis Train: Simulate automated conversations in a dedicated Slack channel. Collaborate with your team to define and manage intents, what users say, and your company's responses.
+* Janis Triage: Get real-time alerts when your AI needs help. Pause your bot so you can chat live with your customer, while training your AI to learn from a customer transcript.
+* Janis Insight: Drill down into bottlenecks and see where your AI needs more training, then measure the impact of additional training through ad hoc reports.
 
 ### What you need to get started:
 * [Janis for Slack](https://slack.com/oauth/authorize?scope=im:history,users:read,users:read.email,commands,chat:write:bot,chat:write:user,channels:read,channels:history,files:write:user,channels:write,links:read,links:write,bot&client_id=23850726983.39760486257)
 * [Botpress with Messenger and/or Slack module installed](https://botpress.io/)
-* [Optional: An API.AI account](http://www.api.ai)
+* [Optional: An API.AI account](https://www.api.ai)
 * [Optional: Botpress with API.AI module installed](https://botpress.io/)
 
 ##### Operational Dependencies:
