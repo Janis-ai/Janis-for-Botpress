@@ -1,19 +1,21 @@
-# [Janis](https://developer.Janis.ai) - Manage AI From Slack
+# [Janis](https://developer.Janis.ai)
+## For Chatbots Built with Botpress
 
-Janis adds powerful AI management capabilities to Slack through a simple and intuitive natural language interface. Add Janis to Slack, then connect your AI in 60 seconds and start training from Slack in Sandbox Mode.  Integrate Janis into bots you're building with this SDK to monitor AI performance, get real-time alerts when your AI needs help, actionable analytics that tell you what to train and then measure results.  Stop training AI like you're training software and start training AI like a valued member of your team.
+Artificial intelligence is only as good as the training it receives. With Janis, you can connect your AI in 60 seconds and start training from Slack.  Drop this code into your bot code in minutes and you can pause your bot and take over live when your bot fails your customers.  Your bot will automatically resume when you're done.  You can view a full list of features at (https://developer.janis.ai).
 
-NOTE:  Currently Janis provides full support for API.AI developers, with limited support for Wit.ai developers.
+* Train   
+Collaborate with your team to define intents and your responses. Simulate bot conversations in a dedicated Slack channel.
 
-### What you can do with Janis:
-You can view a full list of features at (https://developer.janis.ai).  Key features include:
-* Janis Train: Simulate automated conversations in a dedicated Slack channel. Collaborate with your team to define and manage intents, what users say, and your company's responses.
-* Janis Triage: Get real-time alerts when your AI needs help. Pause your bot so you can chat live with your customer, while training your AI to learn from a customer transcript.
-* Janis Insight: Drill down into bottlenecks and see where your AI needs more training, then measure the impact of additional training through ad hoc reports.
+* Take Over Live
+Get real-time alerts when your bot fails your customers. Pause your bot and take over live, while training your AI to learn from the conversation and improve for the future.
+
+* Insights
+Identify bottlenecks in your conversational experience and see where your AI needs more training, then measure the impact of additional training with analytics.
 
 ### What you need to get started:
-* [Janis for Slack](https://slack.com/oauth/authorize?scope=im:history,users:read,users:read.email,commands,chat:write:bot,chat:write:user,channels:read,channels:history,files:write:user,channels:write,links:read,links:write,bot&client_id=23850726983.39760486257)
-* [Botpress with Messenger and/or Slack module installed](https://botpress.io/)
-* [Optional: An API.AI account](https://www.api.ai)
+* [Janis for Slack](https://slack.janis.ai)
+* [A Chatbot built with Botpress](https://botpress.io/)
+* [Optional: An API.AI account](http://www.api.ai) 
 * [Optional: Botpress with API.AI module installed](https://botpress.io/)
 
 ##### Operational Dependencies:
