@@ -1,16 +1,16 @@
-# [Janis](https://www.Janis.ai) - Your Bot Manager
-## For Bots Built with Botpress
+# [Janis](https://www.Janis.ai) - Message Management
+## For Chatbots Built with Botpress
 
 Janis helps teams train and monitor bots and fix problems fast.  [Build a bot with Botpress](https://botpress.io) and add the Janis module to ensure delightful conversational experiences in every messaging channel.
 
 * Train
-Connect AI from companies like Google and Facebook in 60 seconds and collaborate with your team on what users say and your responses. Easily prototype and test out bot dialogs, then continue training live from actual chat transcripts.
+Collaborate on what users say and your responses in a dedicated training channel. Experience exactly what your users will experience when they message you.
 
 * Monitor
-Janis monitors bots and alerts you in Slack when your bot needs help. Take over your bot and chat live to retain your users, while training your bot to learn from the conversation.
+Janis alerts you in Slack when your bot needs your help. Use our smart alerts, or create your own alerts to bring humans in the loop.
 
-* Gain Insights
-See where your bot needs more training and the impact of additional training on user retention. Janis not only delivers actionable insights to Slack, but helps you act on data without leaving Slack.
+* Fix Problems Fast
+Take over for your bot and chat live to retain your users, while training your AI to learn from the conversation. Hand control back to your bot when you're done.
 
 To learn more about Janis' capabilities, visit [Janis.ai](https://www.janis.ai)
 
@@ -19,9 +19,9 @@ To learn more about Janis' capabilities, visit [Janis.ai](https://www.janis.ai)
 * [A Chatbot built with Botpress](https://botpress.io/)
 
 ##### Operational Dependencies:
-1.  You'll need an API key from Janis and for each Chatbot a Bot Token.  You can get both of those when you add Janis to Slack.
+1.  You'll need an API key and a Client Key for your Chatbot.  You can get both of those (free) when you add Janis to Slack. 
 2.  A Messenger and/or Slack module set up in Botpress. 
-3.  An account with an AI source if you want Janis to help you train your AI from Slack.  Currently API.AI (http://www.api.ai) is supported with other sources like wit.ai on the roadmap. You'll also want to add the Botpress API.AI module.
+3.  Janis can help you train your AI from Slack.  Currently Dialogflow, formerly known as API.AI (http://www.api.ai) is supported.
 
 ### Installation
 Installing modules on Botpress is simple. By using CLI, users only need to type this command in their terminal to add Janis module to their bot.
